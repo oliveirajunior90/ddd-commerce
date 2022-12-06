@@ -25,6 +25,10 @@ export default class Order {
     return this._items;
   }
 
+  changeOrderItems(items: OrderItem[]): void {
+    this._items = items;
+  }
+
   validate(): boolean {
     if (this._id.length === 0) {
       throw new Error("Id is required");
@@ -44,6 +48,6 @@ export default class Order {
   }
 
   total(): number {
-    return this._items.reduce((acc, item) => acc + item.price, 0);
+    return this._items.reduce((acc, item) => acc + item.totalPrice, 0);
   }
 }
