@@ -55,5 +55,5 @@ describe("Test find customer use case", () => {
           return usecase.execute(input);
         }).rejects.toThrow("Customer not found");
       });
-
+      
 });
